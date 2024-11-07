@@ -4,6 +4,22 @@ namespace DesignPattern.Observer
 {
     public class ConcreteObserver(string userName) : IObserver
     {
+        public string UserName = userName;
+        private string _availability;
+        public void Update(string availability)
+        {
+            _availability = availability;
+        }
+
+        public void AddSubscriber(Subject subject)
+        {
+            subject.RegisterObserver(this);
+        }
+        
+        public void RemoveSubscriber(Subject subject)
+        {
+            subject.RemoveObserver(this);
+        }
         // Your code goes here... make sure to add this features:
         //1. Allow to hold the observer's name (e.g. when user Adam wants to observe the subject)
         //2. Creating the Observer

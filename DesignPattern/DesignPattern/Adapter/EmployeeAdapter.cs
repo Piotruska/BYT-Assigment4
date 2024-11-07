@@ -8,7 +8,7 @@ namespace DesignPattern.Adapter
         public void ProcessCompanySalary(string[,] employeesArray)
         {
             var listOfEmps = new List<Employee>();
-            for(int i = 0 ; i < employeesArray.Length ; i++)
+            for(int i = 0 ; i < employeesArray.GetUpperBound(0) ; i++)
             {
                 var idOriginal = Convert.ToInt32(employeesArray[i, 0]);
                 var nameOriginal = employeesArray[i, 1];
